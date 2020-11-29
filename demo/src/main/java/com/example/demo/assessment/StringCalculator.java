@@ -1,5 +1,8 @@
 package com.example.demo.assessment;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class StringCalculator {
 	public static int add(String numbers) {
 		
@@ -9,12 +12,28 @@ public class StringCalculator {
 			return 0;
 		}
 		
-		String[] integers = numbers.split(",|\n");
+		String[] integers = spliter(numbers);
 		
 		for(String integer: integers) {
 			sum += Integer.parseInt(integer);
 		}
 		
 		return sum;
+	}
+	
+	static String[] spliter(String text) {
+		
+		if(text.startsWith("//")) {
+			
+			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(text);
+			m.matches();
+			
+			String customDelimiters = m.group(1);
+			String numbers = m.group(2);
+			
+			return numbers.split(customDelimiters);
+		}
+		
+		return text.split(",|\n");
 	}
 }	
