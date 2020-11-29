@@ -20,4 +20,9 @@ public class StringCalculatorTest {
 	void shouldReturnSumOnTwoNumbers() {
 		assertEquals(3, StringCalculator.add("1,2"));
 	}
+	
+	@Test
+	void shouldReturnSumOnMultipleNumbersDelimitedByComma() {
+		assertEquals(10, StringCalculator.add("1,2,3,4"));
+	}
 }
