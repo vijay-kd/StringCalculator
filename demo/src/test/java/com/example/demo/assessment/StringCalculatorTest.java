@@ -1,6 +1,7 @@
 package com.example.demo.assessment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 
@@ -34,5 +35,16 @@ public class StringCalculatorTest {
 	@Test
 	void shouldAcceptCustomDelimiter() {
 		assertEquals(3, StringCalculator.add("//;\n1;2"));
+	}
+	
+	@Test
+	void shouldRaiseAnExceptionOnNegativeNumber() {
+
+		try {
+			StringCalculator.add("-1,2,3");
+			fail("Exception Expected");
+		}catch (RuntimeException e) {
+			//System.out.println(e.getMessage());
+		}
 	}
 }

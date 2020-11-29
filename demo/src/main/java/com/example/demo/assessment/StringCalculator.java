@@ -15,7 +15,12 @@ public class StringCalculator {
 		String[] integers = spliter(numbers);
 		
 		for(String integer: integers) {
-			sum += Integer.parseInt(integer);
+			
+			int num = Integer.parseInt(integer);
+			
+			if(num < 0) throw new RuntimeException("negatives not allowed");
+			
+			sum += num;
 		}
 		
 		return sum;
