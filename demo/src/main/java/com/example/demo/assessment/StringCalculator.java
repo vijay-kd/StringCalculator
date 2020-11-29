@@ -20,6 +20,8 @@ public class StringCalculator {
 			
 			if(num < 0) throw new RuntimeException("negatives not allowed");
 			
+			if(num > 1000) num = 0;
+			
 			sum += num;
 		}
 		

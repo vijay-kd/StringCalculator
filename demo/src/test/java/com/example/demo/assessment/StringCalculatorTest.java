@@ -47,4 +47,9 @@ public class StringCalculatorTest {
 			//System.out.println(e.getMessage());
 		}
 	}
+	
+	@Test
+	void shouldIgnoreNumberBiggerThan1000() {
+		assertEquals(2, StringCalculator.add("2,1001"));
+	}
 }
