@@ -10,4 +10,9 @@ public class StringCalculatorTest {
 	void shouldReturnZeroOnEmptyString() {
 		assertEquals(0, StringCalculator.add(""));
 	}
+	
+	@Test
+	void shouldReturnNumberOnNumber() {
+		assertEquals(1, StringCalculator.add("1"));
+	}
 }
