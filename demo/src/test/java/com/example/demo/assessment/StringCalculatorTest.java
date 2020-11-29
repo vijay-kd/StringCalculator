@@ -15,4 +15,9 @@ public class StringCalculatorTest {
 	void shouldReturnNumberOnNumber() {
 		assertEquals(1, StringCalculator.add("1"));
 	}
+	
+	@Test
+	void shouldReturnSumOnTwoNumbers() {
+		assertEquals(3, StringCalculator.add("1,2"));
+	}
 }
